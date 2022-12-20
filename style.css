@@ -95,23 +95,37 @@ body {
     /* width: 30%; */
     width: 140px;
     height: 140px;
+    /* box-shadow: 0 0 20px black, 0 0 20px black; */
     border-radius: 15px;
   }
   
   .english-name {
-    font-size: 100%;
+    font-size: 240%;
     font-weight: bold;
-    margin: 20px;
-    box-shadow: 0 0 3px black;
+    margin: 15px;
+    /* box-shadow: 0 0 3px black; */
     align-self: flex-start;
   }
   
   .farsi-name {
-    font-size: 100%;
+    font-size: 260%;
     font-weight: bold;
-    /* align-items: stretch; */
-    margin: 20px;
-    box-shadow: 0 0 3px black;
+    margin: 10px;
+    margin-left: 100px;
+    /* box-shadow: 0 0 3px black; */
     align-self: flex-end;
   }
   
+  li::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://example.com/speaker-icon.png);
+    background-size: cover;
+  }
+
+  li.playing::after {
+    display: inline-block;
+  }
+    
