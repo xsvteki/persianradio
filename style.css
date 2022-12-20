@@ -1,19 +1,44 @@
 body {
     font-family: sans-serif;
     color: #333333;
-  }
+    /* background: linear-gradient(to bottom, green, white, red); */
+    /* background-color: linear-gradient(to bottom, green, white, red); */
+    /* background-color: rgb(232, 232, 232); */
+    
+}
+
+  
   
   header {
     background-color: #eeeeee;
-    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: linear-gradient(100deg, green, green, white, red, red);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    
   }
+  
   
   h1 {
-    margin: 0;
+    margin-top: 10px;
     font-size: 2em;
     font-weight: bold;
+    color: black;
+    font-size: 460%;
   }
   
+  h2 {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    font-size: 560%;
+  }
+  
+
   main {
     max-width: 800px;
     margin: 0 auto;
@@ -79,6 +104,7 @@ body {
   
   .radio-item.playing {
     background-color: #d7d7d7; 
+    box-shadow: 0 0 10px black;
   }
   
   .radio-cover {
@@ -91,7 +117,7 @@ body {
     left: 0; /* added */
   }
   
-  .radio-photo {
+  .radio-photo-div {
     /* width: 30%; */
     width: 140px;
     height: 140px;
