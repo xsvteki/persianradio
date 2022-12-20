@@ -7,6 +7,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
   .then(data => {
     // Parse the CSV data
     const parsedData = Papa.parse(data).data;
+    // Remove the first row (header values)
+    parsedData.shift();
 
     // Convert the data into an array of objects
     parsedData.forEach(row => {
