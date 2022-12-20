@@ -2,7 +2,7 @@
 const radioStations = [];
 
 // Fetch the CSV file and parse it
-fetch('stations.csv')
+fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations.csv')
   .then(response => response.text())
   .then(data => {
     // Parse the CSV data
@@ -61,7 +61,6 @@ fetch('stations.csv')
         document.getElementById('play-pause-button').innerText = 'Play';
     }
     });
-});
 
 radioList.appendChild(radioItem);
 
@@ -87,6 +86,8 @@ const farsiName = document.createElement('div');
 farsiName.classList.add('farsi-name');
 farsiName.innerText = station.farsiName;
 radioItem.appendChild(farsiName);
+});
+
 
 });
 
