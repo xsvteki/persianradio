@@ -1,6 +1,6 @@
 @media screen and (max-width: 1200px) {
   h1, h2 {
-    font-size: 80%;  /* reduce font size by 20% */
+    font-size: 40%;  /* reduce font size by 20% */
   }
   #play-pause-button {
     height: 300%;
