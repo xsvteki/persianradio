@@ -25,6 +25,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 
   const radioList = document.getElementById('radio-list');
 
+  
     radioStations.forEach((station) => {
     // create a list item for each radio station
     const radioItem = document.createElement('li');
@@ -68,6 +69,14 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
     });
 
 radioList.appendChild(radioItem);
+
+const mainContent = document.getElementById("main-content");
+const radioListHeight = radioList.offsetHeight;
+const viewportHeight = mainContent.offsetHeight;
+
+// if ( radioListHeight > viewportHeight) {
+  radioList.style.marginBottom = "170px";  // height of play/pause button
+// }
 
 // create a div to hold the radio station's photo
 const radioCover = document.createElement('div');
