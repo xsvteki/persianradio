@@ -1,9 +1,9 @@
 name,url,farsiName,id,imageUrl
-KIRN 670 AM,https://stream.zeno.fm/wyth8w2r3heuv,رادیو ایران ۶۷۰,kirn,https://cdn-profiles.tunein.com/s33212/images/logog.png?t=1
+KIRN 670AM,https://stream.zeno.fm/wyth8w2r3heuv,رادیو ایران ۶۷۰,kirn,https://cdn-profiles.tunein.com/s33212/images/logog.png?t=1
 Radio Hamrah,https://stream-16.zeno.fm/euutwhsru2wtv?zs=TBxpkKBIRL6HU-rTFfrwqg,رادیو همراه,hamrah,https://radiohamrah.com/wp-content/uploads/2017/07/radio-hamrah-banner1.png
 Traditional,https://stream-44.zeno.fm/gesed030ts8uv?zs=MEVJVFcSQ7WrP1Hse7NRkw,رادیو سنتی,traditional,https://images.theconversation.com/files/291904/original/file-20190911-190026-1pi24e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip
 Radio Javan,https://stream-50.zeno.fm/rysp1ne5rm0uv?zs=ah4vhl-7SIOo7wgkaWOp3A,رادیو جوان,javan,https://play-lh.googleusercontent.com/YYRN2L-dUiXTYLPaNUz1CjUHJqkg2kG_TGeNLqEEWU6x-uL13Ab7_bnjPKndn1rVKQ
-Dr. Holakouee,https://stream-11.zeno.fm/fc33aqgrqg8uv?zs=JEAQqu5ZT-2N5Sy1WLqY9g,رادیو هولاکویی,drh,https://yt3.ggpht.com/ytc/AMLnZu_h0-fRwvaF1e0B2-N_evPEVCMPRhqtZ2FKdHrZ=s900-c-k-c0x00ffffff-no-rj
+Holakouee,https://stream-11.zeno.fm/fc33aqgrqg8uv?zs=JEAQqu5ZT-2N5Sy1WLqY9g,رادیو هولاکویی,drh,https://yt3.ggpht.com/ytc/AMLnZu_h0-fRwvaF1e0B2-N_evPEVCMPRhqtZ2FKdHrZ=s900-c-k-c0x00ffffff-no-rj
 Radio Ava,https://stream-17.zeno.fm/71538ne29f8uv?zs=uDrGT3AsTH-uH0g27lh7nQ,رادیو اوا,ava,http://tv.sarcheshmeh.us/thumb.php?w=900&h=506&src=http://tv.sarcheshmeh.us/index_files/channels/radioava.jpg
 Tehrangeles,https://stream-43.zeno.fm/sd125v5xnp8uv?zs=u4unVZgPT-6tm7IU0g6HGA, رادیو تهرانجلس, tehrangeles, https://ajammc.com/wp-content/uploads/2016/08/los_angeles_persian_parade_via_facebook.jpg)
 Radio Donya,https://stream.zeno.fm/v5kxmagseg0uv,رادیو جهانی,rd,https://www.radio.net/images/broadcasts/e4/00/117556/1/c300.png
@@ -11,15 +11,15 @@ Jazz,https://stream.zeno.fm/fm5shkhhr68uv,جاز,jazz1,https://www.radio.net/ima
 Radio Iranian,https://stream-40.zeno.fm/5tv4e631ss8uv?zs=MvAEiEOVSLWHpD_O3L9-GA,رادیو ایران,iranianradio,https://play-lh.googleusercontent.com/ivG5MlrudLBc0fKaHFvT6kit6oC4dgplJT1NdP0ALB9r_XZva-LT926hzjIvfC6JCA=w240-h480-rw
 Radio Bamdad,https://s3.radio.co/sd07c718f1/listen,رادیو بامداد,bombadlarge,https://play-lh.googleusercontent.com/RX7_iqH9S_9zMncU2r-Dcftl7grVQDQmrv7DVFo-K9QNSCrzHKDFkhBDMD3JvnU6qA=w240-h480-rw
 VOA Persian,https://n0d.radiojar.com/y58cqgggq3quv?rj-ttl=5&rj-tok=AAABgq05rTcAnRPW5ITO2wHxow,صدای آمریکا,voap,https://images.squarespace-cdn.com/content/v1/5ca60e73b9144940612f0442/1567551184652-HAYV09P07CFDJPUTUFBV/VOA_01_LOGO_FARSI_RGB.jpg
+VOA English,http://n05.radiojar.com/t2n88q0st5quv?rj-ttl=5&rj-tok=AAABhTD5N_4Amh2aZBKPQ-tu5g,VOA America,voae,https://cdn-profiles.tunein.com/s25696/images/logod.png?t=637885833510000000
 Iran International,https://n11.radiojar.com/dfnrphnr5f0uv?rj-ttl=5&rj-tok=AAABgq7uduUATHS8ZUUYq9FRgQ,ایران اینترنشنال,iraninternational,https://www.iranintl.com/img/iitv/og-image.png
 Radio Yar,https://shoutcast.glwiz.com/RadioYAR.mp3,رادیو یار,yar,https://cdn-profiles.tunein.com/s223513/images/logog.png?t=159293
 Ghasedak,https://listen.radioking.com/radio/338137/stream/386674,رادیو قاصدک,ghasedak,https://i1.sndcdn.com/avatars-ZRH94QUMzouRrqsN-w6GHkw-t500x.jpg
-Radio Ayeneh,http://radioayeneh.serveftp.com/,آینه,ayeneh,https://i1.sndcdn.com/avatars-y1U3f01foaoXcHgI-s67fkg-t500x500.jpg
-Iranian Radio,http://37.59.47.192:8200/,رادیو ایران,iranianradio1,https://static-media.streema.com/media/cache/2f/1e/2f1e5338fd2a82093278bf6bbf037642.jpg
+Radio Ayeneh,http://83.250.62.255/;&type=mp3,آینه,ayeneh,https://i1.sndcdn.com/avatars-y1U3f01foaoXcHgI-s67fkg-t500x500.jpg
+Iranian Radio,https://radio1.radioeram.com/,رادیو ایران,iranianradio1,https://static-media.streema.com/media/cache/2f/1e/2f1e5338fd2a82093278bf6bbf037642.jpg
 Radio ITN,https://cp12.serverse.com/proxy/itnfm?mp=/stream,ITN رادیو,radioitn,https://cdn.soft112.com/radio-itn/00/00/0G/3K/00000G3KJB/pad_screenshot.jpg
-Kan Farsi,https://kanliveicy.media.kan.org.il/icy/voisfarsi_mp3,عبری فارسی,kan,https://static.wikia.nocookie.net/logopedia/images/e/ea/VoisFarsi.svg/revision/latest/scale-to-width-down/300?cb=20220616011326
+Kan Farsi,https://kanliveicy.media.kan.org.il/icy/voisfarsi_mp3,عبری فارسی,kan,https://escbubble.com/wp-content/uploads/2017/05/IPBC-KAN-logo1.jpg
 Radio Shadi,https://ice9.securenetsystems.net/SHADI?playSessionID=D727658C-155D-C0F4-07C3367D747C8B98,رادیو شادی,shadi,https://play-lh.googleusercontent.com/cWsZNlMIbiYUsQ3Db26bo7H3VGebuF8qnsZuXNex_jxkgkU-0yIhhwMYb9JIGd2RhwE
 Radio Faaz,http://www.radiofaaz.com:8000/radiofaaz,رادیو فاز بشنوید,faaz,https://www.radio.net/images/broadcasts/13/09/16637/c300.png
 RFI Persian,http://rfipersan96k.ice.infomaniak.ch/rfipersan-96k.mp3,رادیو ار.اف.ای,rfipersian,https://static-media.streema.com/media/cache/a9/01/a9019f5730edd71e4ad5b60ebed63c6a.jpg
 Hamsafar,https://streamingp.shoutcast.com/Hamsafarradio?lang=en-US%2cen%3bq%3d0.9,رادیو همسفر,hams,https://cdn-radiotime-logos.tunein.com/s68286d.png
-AvazFarsi,http://avazfarsi.com:9300/;,اولین رادیو فارسی,avazfarsi,https://i1.sndcdn.com/avatars-000398243136-whzm5f-t500x500.jpg

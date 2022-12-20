@@ -48,25 +48,42 @@ body {
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0px;
   }
   
   li {
     margin: 10px 0;
   }
   
-  button {
+button {
     display: block;
     width: 100%;
+    height: 70px;
     padding: 10px;
     background-color: #444444;
     color: #ffffff;
     border: none;
     cursor: pointer;
-  }
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    /* background: url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png') center center no-repeat; */
+    background-size: contain;
+  } 
   
   button:hover {
     background-color: #666666;
+  }
+
+  .play-pause-button {
+    position: fixed;
+    /* background: url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png') center center no-repeat; */
+    background-size: contain;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
   
   footer {
@@ -154,4 +171,11 @@ body {
   li.playing::after {
     display: inline-block;
   }
+
+
+
+
+  /* #pause-icon-container {
+    
+  } */
     

@@ -53,6 +53,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         radioItem.classList.add('playing');
         // update the play/pause button's text
         document.getElementById('play-pause-button').innerText = 'Pause';
+        // pauseIconContainer.style.backgroundImage = "url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png')";
+
     } else {
         // pause the audio
         audioPlayer.pause();
@@ -61,6 +63,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         
         // update the play/pause button's text
         document.getElementById('play-pause-button').innerText = 'Play';
+        // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
     }
     });
 
@@ -105,94 +108,43 @@ if (audioPlayer.paused) {
     audioPlayer.play();
     // update the button's text
     document.getElementById('play-pause-button').innerText = 'Pause';
+    // pauseIconContainer.style.backgroundImage = "url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png')";
+    
 } else {
     // pause the audio
     audioPlayer.pause();
     // update the button's text
     document.getElementById('play-pause-button').innerText = 'Play';
+    // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
+    
     }
   });
   
 
+//   const pauseIconContainer = document.createElement('div');
+// pauseIconContainer.id = 'pause-icon-container';
 
-/*  
-const radioList = document.getElementById('radio-list');
+// // set the initial background image for the pause icon container
+// pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
 
-//   let currentRadio = station[0];
+// // set the initial position of the pause icon container
+// pauseIconContainer.style.position = 'fixed';
+// pauseIconContainer.style.bottom = '0';
+// pauseIconContainer.style.left = '50%';
+// pauseIconContainer.style.transform = 'translateX(-50%)';
 
-radioStations.forEach((station) => {
-// create a list item for each radio station
-const radioItem = document.createElement('li');
-radioItem.classList.add('radio-item');
-radioItem.addEventListener('click', () => {
-// // remove "playing" class from all radio items
-// Array.from(radioList.children).forEach((child) => {
-//   child.classList.remove('playing');
-// });
-// add "playing" class to the clicked radio item
-// radioItem.classList.remove('playing');
-// for (const radio of radioStations) {
-//     const li = document.querySelector(`#${radio.id}`);
-//     radio.classList.remove('playing');
-//   }
-if (audioPlayer.src != station.url) {
-        // remove "playing" class from all radio items
-    Array.from(radioList.children).forEach((child) => {
-        child.classList.remove('playing');
-    });
-    // add "playing" class to the clicked radio item
-    radioItem.classList.add('playing');
-}
+// // set the size and other styles for the pause icon container
+// pauseIconContainer.style.width = '60px';
+// pauseIconContainer.style.height = '60px';
+// pauseIconContainer.style.backgroundColor = 'white';
+// pauseIconContainer.style.borderRadius = '50%';
+// pauseIconContainer.style.cursor = 'pointer';
+// pauseIconContainer.style.boxShadow = '0 0 10px black';
 
 
-// set audio player to curr station
-if (audioPlayer.src != station.url) {
-    // station.radioItem.classList.add('playing');
-    // currentRadio.radioItem.classList.remove('playing');
-    audioPlayer.src = station.url;
-}
-// check if the audio player is currently paused
-if (audioPlayer.paused) {
-    // play the audio
-    audioPlayer.play();
-    radioItem.classList.add('playing');
-    // update the play/pause button's text
-    document.getElementById('play-pause-button').innerText = 'Pause';
-} else {
-    // pause the audio
-    audioPlayer.pause();
-    //remove playing classlist
-    radioItem.classList.remove('playing');
-    
-    // update the play/pause button's text
-    document.getElementById('play-pause-button').innerText = 'Play';
-}
-});
-radioList.appendChild(radioItem);
 
-// create a div to hold the radio station's photo
-const radioCover = document.createElement('div');
-radioCover.classList.add('radio-photo-div');
-radioItem.appendChild(radioCover);
-
-// create an img element for the radio station's photo
-const radioImg = document.createElement('img');
-radioImg.src = station.imageUrl;
-radioImg.classList.add('radio-cover');
-radioCover.appendChild(radioImg);
-
-// create a div to hold the radio station's English name
-const englishName = document.createElement('div');
-englishName.classList.add('english-name');
-englishName.innerText = station.name;
-radioItem.appendChild(englishName);
-
-// create a div to hold the radio station's Farsi name
-const farsiName = document.createElement('div');
-farsiName.classList.add('farsi-name');
-farsiName.innerText = station.farsiName;
-radioItem.appendChild(farsiName);
-
+window.addEventListener('scroll', () => {
+  // update the bottom position of the container based on the current scroll position
+  pauseIconContainer.style.bottom = `${window.scrollY}px`;
 });
 
-*/
