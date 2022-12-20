@@ -121,30 +121,40 @@ if (audioPlayer.paused) {
   });
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //   const pauseIconContainer = document.createElement('div');
 // pauseIconContainer.id = 'pause-icon-container';
 
 // // set the initial background image for the pause icon container
 // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
 
-// // set the initial position of the pause icon container
-// pauseIconContainer.style.position = 'fixed';
-// pauseIconContainer.style.bottom = '0';
-// pauseIconContainer.style.left = '50%';
-// pauseIconContainer.style.transform = 'translateX(-50%)';
-
-// // set the size and other styles for the pause icon container
-// pauseIconContainer.style.width = '60px';
-// pauseIconContainer.style.height = '60px';
-// pauseIconContainer.style.backgroundColor = 'white';
-// pauseIconContainer.style.borderRadius = '50%';
-// pauseIconContainer.style.cursor = 'pointer';
-// pauseIconContainer.style.boxShadow = '0 0 10px black';
 
 
 
-window.addEventListener('scroll', () => {
-  // update the bottom position of the container based on the current scroll position
-  pauseIconContainer.style.bottom = `${window.scrollY}px`;
-});
+// window.addEventListener('scroll', () => {
+//   // update the bottom position of the container based on the current scroll position
+//   pauseIconContainer.style.bottom = `${window.scrollY}px`;
+// });
 

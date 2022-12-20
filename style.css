@@ -13,10 +13,13 @@ body {
     background-color: #eeeeee;
     padding-left: 30px;
     padding-right: 30px;
-    background: linear-gradient(100deg, green, green, white, red, red);
+    background: linear-gradient(140deg, green, green, white, red, red);
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
+    border-radius: 25px;
+    box-shadow: 0 0 2px black;
+    border: 3px solid black;
     
   }
   
@@ -54,37 +57,33 @@ body {
   li {
     margin: 10px 0;
   }
-  
-button {
+
+
+  #play-pause-button {
     display: block;
     width: 100%;
     height: 70px;
     padding: 10px;
     background-color: #444444;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
     bottom: 0;
     left: 0;
     right: 0;
     position: fixed;
-    /* background: url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png') center center no-repeat; */
-    background-size: contain;
-  } 
+    border-top-left-radius : 25px;
+    border-top-right-radius : 25px;
+    box-shadow: 0 -15px 50px black;
+    border: 3px solid black;
+
+    font-size: 260%;
+    font-weight: bold;
+    color: #ffffff;
+
+  }
   
-  button:hover {
+  #play-pause-button:hover {
     background-color: #666666;
   }
 
-  .play-pause-button {
-    position: fixed;
-    /* background: url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png') center center no-repeat; */
-    background-size: contain;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
   
   footer {
     background-color: #eeeeee;
