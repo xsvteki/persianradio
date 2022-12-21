@@ -25,7 +25,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
     });
   });
 
-  console.log(radioStations);
+  // console.log(radioStations);
 
   const radioList = document.getElementById('radio-list');
 
@@ -68,32 +68,33 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 
     radioItem.addEventListener('click', function(event) {
       try {
-        // remove "playing" class from all radio items
+        let isplaying = radioList.querySelector('.radio-cover.playing');
+        // console.log(isplaying);
+        if (isplaying) {
+          isplaying.classList.remove('playing');
+        }
+        // console.log(isplaying);
+
+        // radioItem.querySelector('.radio-cover').classList.remove('playing');
+
         if (audioPlayer.src != station.url) {
           // remove "playing" class from all radio items
           Array.from(radioList.children).forEach((child) => {
             child.classList.remove('playing');
           });
+
           // add "playing" class to the clicked radio item
           radioItem.classList.add('playing');
+
           audioPlayer.src = station.url
 
           navigator.mediaSession.metadata = new MediaMetadata({
             title: station.farsiName,
             artist: station.name,
             // artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
-            artwork: [
-              { src: station.imageUrl, sizes: '16x16', type: 'image/png' },
-              { src: station.imageUrl, sizes: '32x32', type: 'image/png' },
-              { src: station.imageUrl, sizes: '64x64', type: 'image/png' },
-              { src: station.imageUrl, sizes: '128x128', type: 'image/png' },
-              { src: station.imageUrl, sizes: '256x256', type: 'image/png' },
-              { src: station.imageUrl, sizes: '512x512', type: 'image/png' },
-              { src: station.imageUrl, sizes: '1024x1024', type: 'image/png' },
-              { src: station.imageUrl, sizes: '2048x2048', type: 'image/png' }
-            ]
+            // artwork: 
           });
-          audioPlayer.setAttribute('poster', station.imageUrl);
+          // audioPlayer.setAttribute('poster', station.imageUrl);
         }
        
 
@@ -101,7 +102,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         // check if the audio player is currently paused
         if (audioPlayer.paused) {
           // Show the loading indicator
-          radioImg.src = "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
+          radioImg.src = "https://media.tenor.com/wfEN4Vd_GYsAAAAC/loading.gif";
+          // "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
           
         
           // Start playing the radio station
@@ -125,30 +127,35 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             clearTimeout(timeout);
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
+            
             button.innerHTML = "Pause <img src='pause.png'>";
             // document.title = "Persian Radio: " + station.name;
             // faviconLink.href = station.imageUrl;
             // document.querySelector("link[rel~='favicon']").href = station.imageUrl;
             favicon.setAttribute("href", station.imageUrl);
+
+            console.log("is playing audio");
+            radioItem.querySelector('.radio-cover').classList.add('playing');
+            
+
           };
 
-          radioItem.classList.add('playing');
-          // update the play/pause button's text
-        
 
         } else {
           audioPlayer.pause();
           //remove playing classlist
           radioItem.classList.remove('playing');
+
           // update the play/pause button's text
           button.innerHTML = "Play <img src='play.png'>";
 
-          // document.title = "Persian Radio";
+          radioImg.src = station.imageUrl;
         }
 
       }
       catch (error) {
-        console.log("Caught the Exception: Failed to load because no supported source was found.");
+        throw error;
+        // console.log("Caught the Exception");
       } 
 
     });
@@ -158,14 +165,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 });
 
 const button = document.getElementById('play-pause-button');
-// let ppText = ppButton.getAttribute('data-text');
-// let ppIcon = ppButton.getAttribute('data-icon');
-
-// ppButton.innerHTML = `${ppText} <img src='${ppIcon}'>`;
-
-
-
-
+const radioCoverElements = Array.from(document.querySelectorAll('.radio-cover'));
 
 
 const favicon = document.getElementById("favicon");
@@ -196,21 +196,30 @@ navigator.mediaSession.setActionHandler('pause', function() {
 });
 
 
-  // create an audio player element 
+
 // const audioPlayer = document.createElement('audio');
 const audioPlayer = document.getElementById('audio-player')
+
+let currplaying = null;
 
 audioPlayer.poster = 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png';
 document.body.appendChild(audioPlayer);
 
 document.getElementById('play-pause-button').addEventListener('click', () => {
+
   if (audioPlayer.paused) {
+
     audioPlayer.play();
     // update the button's text
     button.innerHTML = "Pause <img src='pause.png'>";
+
+    // addPlayingClass(currplaying);
       
   } else {
+
     audioPlayer.pause();
+    
+    // currplaying = removePlayingClass;
     // update the button's text
     button.innerHTML = "Play <img src='play.png'>";
   }

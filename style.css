@@ -91,11 +91,6 @@ body {
     color: #000000;
 
   }
-  
-  /* #play-pause-button:hover {
-    background-color: #d0d0d0;
-  } */
-
   #play-pause-button img {
     vertical-align: middle;
     padding-right: 10px;
@@ -151,37 +146,51 @@ body {
   
   .radio-item.playing {
     background-color: #d7d7d7; 
-    box-shadow: 0 0 10px black;
+    /* box-shadow: 0 0 20px black; */
   }
   
   .radio-cover {
     width: 140px;
     height: 140px;
     border-radius: 15px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 10px black;
+    border-width: 1px;
     position: absolute; 
     /* position: relative;  */
     left: 0; /* added */
   }
+
+  .radio-cover.playing {
+    /* box-shadow: 0 0 30px green; */
+    visibility: hidden;
+    /* display: none; */
+    /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.png'); */
+  }
   
   .radio-photo-div {
     /* width: 30%; */
-    width: 140px;
+    width: 140px !important;
     height: 140px;
-    /* box-shadow: 0 0 20px black, 0 0 20px black; */
+    /* background-color: #dadada; */
+    /* box-shadow: 0 0 20px rgb(106, 23, 23); */
     border-radius: 15px;
+    /* background-image: 'pause.png'; */
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.png');
+    background-size: cover;
+    background-position: center;
   }
   
   .english-name {
-    font-size: 240%;
+    font-size: 210%;
     font-weight: bold;
     margin: 15px;
+    padding: 15px;
     /* box-shadow: 0 0 3px black; */
     align-self: flex-start;
   }
   
   .farsi-name {
-    font-size: 260%;
+    font-size: 230%;
     font-weight: bold;
     margin: 10px;
     margin-left: 100px;
