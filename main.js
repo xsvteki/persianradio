@@ -3,107 +3,128 @@ const radioStations = [];
 
 // Fetch the CSV file and parse it
 fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations.csv')
-  .then(response => response.text())
-  .then(data => {
-    // Parse the CSV data
-    const parsedData = Papa.parse(data).data;
-    // Remove the first row (header values)
-    parsedData.shift();
+.then(response => response.text())
+.then(data => {
+  // Parse the CSV data
+  const parsedData = Papa.parse(data).data;
+  // Remove the first row (header values)
+  parsedData.shift();
 
-    // Convert the data into an array of objects
-    parsedData.forEach(row => {
-      radioStations.push({
-        name: row[0],
-        url: row[1],
-        farsiName: row[2],
-        id: row[3],
-        imageUrl: row[4]
-      });
+  // Convert the data into an array of objects
+  parsedData.forEach(row => {
+    radioStations.push({
+      name: row[0],
+      url: row[1],
+      farsiName: row[2],
+      id: row[3],
+      imageUrl: row[4]
     });
+  });
 
   console.log(radioStations);
 
   const radioList = document.getElementById('radio-list');
 
-  
-    radioStations.forEach((station) => {
+  radioStations.forEach((station) => {
     // create a list item for each radio station
     const radioItem = document.createElement('li');
     radioItem.classList.add('radio-item');
-    radioItem.addEventListener('click', () => {
-    // remove "playing" class from all radio items
-    if (audioPlayer.src != station.url) {
-            // remove "playing" class from all radio items
+    radioList.appendChild(radioItem);
+
+    const mainContent = document.getElementById("main-content");
+    const radioListHeight = radioList.offsetHeight;
+    const viewportHeight = mainContent.offsetHeight;
+
+    radioList.style.marginBottom = "170px";  // height of play/pause button
+
+    // create a div to hold the radio station's photo
+    const radioCover = document.createElement('div');
+    radioCover.classList.add('radio-photo-div');
+    radioItem.appendChild(radioCover);
+
+    // create an img element for the radio station's photo
+    const radioImg = document.createElement('img');
+    radioImg.src = station.imageUrl;
+    radioImg.classList.add('radio-cover');
+    radioCover.appendChild(radioImg);
+
+    // create a div to hold the radio station's English name
+    const englishName = document.createElement('div');
+    englishName.classList.add('english-name');
+    englishName.innerText = station.name;
+    radioItem.appendChild(englishName);
+
+    // create a div to hold the radio station's Farsi name
+    const farsiName = document.createElement('div');
+    farsiName.classList.add('farsi-name');
+    farsiName.innerText = station.farsiName;
+    radioItem.appendChild(farsiName);
+
+
+
+    radioItem.addEventListener('click', function(event) {
+      // remove "playing" class from all radio items
+      if (audioPlayer.src != station.url) {
+        // remove "playing" class from all radio items
         Array.from(radioList.children).forEach((child) => {
-            child.classList.remove('playing');
+          child.classList.remove('playing');
         });
         // add "playing" class to the clicked radio item
         radioItem.classList.add('playing');
-    }
-
-    // set audio player to curr station
-    if (audioPlayer.src != station.url) {
-        // station.radioItem.classList.add('playing');
-        // currentRadio.radioItem.classList.remove('playing');
         audioPlayer.src = station.url;
-    }
+      }
+
+    
     // check if the audio player is currently paused
-    if (audioPlayer.paused) {
-        // play the audio
+      if (audioPlayer.paused) {
+        // Show the loading indicator
+        radioImg.src = "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
+        
+        // Start playing the radio station
         audioPlayer.play();
+
+        // Hide the loading indicator
+        audioPlayer.onplaying = function() {
+          // Hide the loading indicator
+          radioImg.src = station.imageUrl;
+        };
+
         radioItem.classList.add('playing');
         // update the play/pause button's text
         document.getElementById('play-pause-button').innerText = 'Pause';
-        // pauseIconContainer.style.backgroundImage = "url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png')";
 
-    } else {
+      } else {
         // pause the audio
         audioPlayer.pause();
         //remove playing classlist
         radioItem.classList.remove('playing');
-        
         // update the play/pause button's text
-        document.getElementById('play-pause-button').innerText = 'Play';
-        // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
-    }
+        document.getElementById('play-pause-button').innerText = 'Play';   
+      }
     });
 
-radioList.appendChild(radioItem);
+  });
 
-const mainContent = document.getElementById("main-content");
-const radioListHeight = radioList.offsetHeight;
-const viewportHeight = mainContent.offsetHeight;
+});
 
-// if ( radioListHeight > viewportHeight) {
-  radioList.style.marginBottom = "170px";  // height of play/pause button
+// function playRadioStation() {
+//   // Start playing the radio station
+//   audioPlayer.src = url;
+
 // }
+function playRadioStation(url) {
+  // Start playing the radio station
+  // set audio player to curr station
+  // if (audioPlayer.src != station.url) {
+  //   audioPlayer.src = station.url;
+  // }
+  audioPlayer.play();
 
-// create a div to hold the radio station's photo
-const radioCover = document.createElement('div');
-radioCover.classList.add('radio-photo-div');
-radioItem.appendChild(radioCover);
-
-// create an img element for the radio station's photo
-const radioImg = document.createElement('img');
-radioImg.src = station.imageUrl;
-radioImg.classList.add('radio-cover');
-radioCover.appendChild(radioImg);
-
-// create a div to hold the radio station's English name
-const englishName = document.createElement('div');
-englishName.classList.add('english-name');
-englishName.innerText = station.name;
-radioItem.appendChild(englishName);
-
-// create a div to hold the radio station's Farsi name
-const farsiName = document.createElement('div');
-farsiName.classList.add('farsi-name');
-farsiName.innerText = station.farsiName;
-radioItem.appendChild(farsiName);
-});
-
-
-});
+  // Hide the spinner GIF
+  document.getElementById('spinner').style.display = 'none';
+  // Show the radio cover
+  document.getElementById('radio-cover').style.display = 'block';
+}
 
 
   
@@ -112,22 +133,21 @@ const audioPlayer = document.createElement('audio');
 document.body.appendChild(audioPlayer);
 
 document.getElementById('play-pause-button').addEventListener('click', () => {
-if (audioPlayer.paused) {
+  if (audioPlayer.paused) {
     // play the audio
     audioPlayer.play();
     // update the button's text
     document.getElementById('play-pause-button').innerText = 'Pause';
     // pauseIconContainer.style.backgroundImage = "url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png')";
-    
-} else {
+      
+  } else {
     // pause the audio
     audioPlayer.pause();
     // update the button's text
     document.getElementById('play-pause-button').innerText = 'Play';
     // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
-    
-    }
-  });
+  }
+});
   
 
 
