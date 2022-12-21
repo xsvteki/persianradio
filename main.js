@@ -91,6 +91,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
             document.getElementById('play-pause-button').innerText = 'Pause';
+            document.title = station.name; // importante
+            faviconLink.href = station.imageUrl;
           };
 
           radioItem.classList.add('playing');
@@ -116,6 +118,10 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
   });
 
 });
+
+
+const faviconLink = document.querySelector('link[rel="icon"]');
+
 
 
 
