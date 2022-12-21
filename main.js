@@ -77,6 +77,13 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
           // add "playing" class to the clicked radio item
           radioItem.classList.add('playing');
           audioPlayer.src = station.url
+
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: station.name,
+            artist: station.farsiName,
+            artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
+            // artwork: [{ src: station.imageUrl, type: 'image/png' }]
+          });
         }
        
 
@@ -126,12 +133,31 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 });
 
 
+
+
+
 const favicon = document.getElementById("favicon");
 
+navigator.mediaSession.metadata = new MediaMetadata({
+  title: 'Persian Radio',
+  artist: '',
+  artwork: [{ src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '16x16', type: 'image/png' }]
+});
 
 
 
-  
+/*
+// Set the audio player's control actions
+navigator.mediaSession.setActionHandler('play', function() {
+  // Code to handle the play action
+  audioPlayer.play();
+});
+navigator.mediaSession.setActionHandler('pause', function() {
+  // Code to handle the pause action
+  audioPlayer.pause();
+});
+*/
+
   // create an audio player element
 const audioPlayer = document.createElement('audio');
 document.body.appendChild(audioPlayer);
