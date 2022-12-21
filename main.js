@@ -79,10 +79,10 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
           audioPlayer.src = station.url
 
           navigator.mediaSession.metadata = new MediaMetadata({
-            title: station.name,
-            artist: station.farsiName,
-            artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
-            // artwork: [{ src: station.imageUrl, type: 'image/png' }]
+            title: station.farsiName,
+            artist: station.name,
+            // artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
+            artwork: [{ src: station.imageUrl, type: 'image/png' }]
           });
         }
        
