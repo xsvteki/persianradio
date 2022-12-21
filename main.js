@@ -84,6 +84,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             // artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
             artwork: [{ src: station.imageUrl, type: 'image/png' }]
           });
+          audioPlayer.setAttribute('poster', station.imageUrl);
         }
        
 
@@ -102,7 +103,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
             document.getElementById('play-pause-button').innerText = 'Pause';
-            document.title = station.name;
+            document.title = "Persian Radio: " + station.name;
             // faviconLink.href = station.imageUrl;
             // document.querySelector("link[rel~='favicon']").href = station.imageUrl;
             favicon.setAttribute("href", station.imageUrl);
@@ -119,6 +120,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
           radioItem.classList.remove('playing');
           // update the play/pause button's text
           document.getElementById('play-pause-button').innerText = 'Play';   
+
+          document.title = "Persian Radio";
         }
 
       }
@@ -160,6 +163,7 @@ navigator.mediaSession.setActionHandler('pause', function() {
 
   // create an audio player element
 const audioPlayer = document.createElement('audio');
+audioPlayer.poster = 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png';
 document.body.appendChild(audioPlayer);
 
 document.getElementById('play-pause-button').addEventListener('click', () => {
