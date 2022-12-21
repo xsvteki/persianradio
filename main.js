@@ -82,7 +82,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             title: station.farsiName,
             artist: station.name,
             // artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
-            artwork: [{ src: station.imageUrl, type: 'image/png' }]
+            artwork: [{ src: station.imageUrl, sizes: '1024x1024', type: 'image/png' }]
           });
           audioPlayer.setAttribute('poster', station.imageUrl);
         }
@@ -95,11 +95,17 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
           radioImg.src = "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
           
         
-            // Start playing the radio station
-            audioPlayer.play();
+          // Start playing the radio station
+          audioPlayer.play();
+
+          let timeout = setTimeout(function() {
+            radioImg.src = "https://us.123rf.com/450wm/photoart23d/photoart23d1902/photoart23d190201517/photoart23d190201517.jpg?ver=6"
+          }, 10000);
 
           // Hide the loading indicator
           audioPlayer.onplaying = function() {
+            // no need to timeout
+            clearTimeout(timeout);
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
             document.getElementById('play-pause-button').innerText = 'Pause';
@@ -144,7 +150,11 @@ const favicon = document.getElementById("favicon");
 navigator.mediaSession.metadata = new MediaMetadata({
   title: 'Persian Radio',
   artist: '',
-  artwork: [{ src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '16x16', type: 'image/png' }]
+  artwork: [
+    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '512x512', type: 'image/png' },
+    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '1024x1024', type: 'image/png' },
+    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '2048x2048', type: 'image/png' }
+  ]
 });
 
 
