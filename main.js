@@ -1,3 +1,7 @@
+/*
+need to make sure that the HTML and JavaScript files are served from the same origin, or that the server is configured to allow cross-origin resource sharing (CORS) for the JavaScript code.
+*/
+
 // Get stations from file - store in array
 const radioStations = [];
 
@@ -91,8 +95,10 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
             document.getElementById('play-pause-button').innerText = 'Pause';
-            document.title = station.name; // importante
-            faviconLink.href = station.imageUrl;
+            document.title = station.name;
+            // faviconLink.href = station.imageUrl;
+            // document.querySelector("link[rel~='favicon']").href = station.imageUrl;
+            favicon.setAttribute("href", station.imageUrl);
           };
 
           radioItem.classList.add('playing');
@@ -120,7 +126,7 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 });
 
 
-const faviconLink = document.querySelector('link[rel="icon"]');
+const favicon = document.getElementById("favicon");
 
 
 
