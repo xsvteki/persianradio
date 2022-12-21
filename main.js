@@ -82,7 +82,16 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             title: station.farsiName,
             artist: station.name,
             // artwork: [{ src: station.imageUrl, sizes: '16x16', type: 'image/png' }]
-            artwork: [{ src: station.imageUrl, sizes: '1024x1024', type: 'image/png' }]
+            artwork: [
+              { src: station.imageUrl, sizes: '16x16', type: 'image/png' },
+              { src: station.imageUrl, sizes: '32x32', type: 'image/png' },
+              { src: station.imageUrl, sizes: '64x64', type: 'image/png' },
+              { src: station.imageUrl, sizes: '128x128', type: 'image/png' },
+              { src: station.imageUrl, sizes: '256x256', type: 'image/png' },
+              { src: station.imageUrl, sizes: '512x512', type: 'image/png' },
+              { src: station.imageUrl, sizes: '1024x1024', type: 'image/png' },
+              { src: station.imageUrl, sizes: '2048x2048', type: 'image/png' }
+            ]
           });
           audioPlayer.setAttribute('poster', station.imageUrl);
         }
@@ -97,9 +106,17 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         
           // Start playing the radio station
           audioPlayer.play();
+          
 
+          // outer timeout: if link causes error, make cover 'X'
+          // inner timeout: after cover has been "X" for certain interval, return to OG cover
           let timeout = setTimeout(function() {
             radioImg.src = "https://us.123rf.com/450wm/photoart23d/photoart23d1902/photoart23d190201517/photoart23d190201517.jpg?ver=6"
+            
+            let timeoutClear = setTimeout(function() {
+              radioImg.src = station.imageUrl;
+            }, 20000);
+
           }, 10000);
 
           // Hide the loading indicator
@@ -108,8 +125,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             clearTimeout(timeout);
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
-            document.getElementById('play-pause-button').innerText = 'Pause';
-            document.title = "Persian Radio: " + station.name;
+            button.innerHTML = "Pause <img src='pause.png'>";
+            // document.title = "Persian Radio: " + station.name;
             // faviconLink.href = station.imageUrl;
             // document.querySelector("link[rel~='favicon']").href = station.imageUrl;
             favicon.setAttribute("href", station.imageUrl);
@@ -120,14 +137,13 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         
 
         } else {
-          // pause the audio
           audioPlayer.pause();
           //remove playing classlist
           radioItem.classList.remove('playing');
           // update the play/pause button's text
-          document.getElementById('play-pause-button').innerText = 'Play';   
+          button.innerHTML = "Play <img src='play.png'>";
 
-          document.title = "Persian Radio";
+          // document.title = "Persian Radio";
         }
 
       }
@@ -140,6 +156,13 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
   });
 
 });
+
+const button = document.getElementById('play-pause-button');
+// let ppText = ppButton.getAttribute('data-text');
+// let ppIcon = ppButton.getAttribute('data-icon');
+
+// ppButton.innerHTML = `${ppText} <img src='${ppIcon}'>`;
+
 
 
 
@@ -159,36 +182,36 @@ navigator.mediaSession.metadata = new MediaMetadata({
 
 
 
-/*
-// Set the audio player's control actions
+
+// play/pause from control center
 navigator.mediaSession.setActionHandler('play', function() {
-  // Code to handle the play action
   audioPlayer.play();
+  // update the pages button's text
+  button.innerHTML = "Pause <img src='pause.png'>";
 });
 navigator.mediaSession.setActionHandler('pause', function() {
-  // Code to handle the pause action
   audioPlayer.pause();
+  // update the pages button's text
+  button.innerHTML = "Play <img src='play.png'>";
 });
-*/
 
-  // create an audio player element
-const audioPlayer = document.createElement('audio');
+
+  // create an audio player element 
+// const audioPlayer = document.createElement('audio');
+const audioPlayer = document.getElementById('audio-player')
+
 audioPlayer.poster = 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png';
 document.body.appendChild(audioPlayer);
 
 document.getElementById('play-pause-button').addEventListener('click', () => {
   if (audioPlayer.paused) {
-    // play the audio
     audioPlayer.play();
     // update the button's text
-    document.getElementById('play-pause-button').innerText = 'Pause';
-    // pauseIconContainer.style.backgroundImage = "url('https://www.seekpng.com/png/detail/179-1792518_play-stop-pause-icon-png.png')";
+    button.innerHTML = "Pause <img src='pause.png'>";
       
   } else {
-    // pause the audio
     audioPlayer.pause();
     // update the button's text
-    document.getElementById('play-pause-button').innerText = 'Play';
-    // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
+    button.innerHTML = "Play <img src='play.png'>";
   }
 });

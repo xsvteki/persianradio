@@ -5,15 +5,17 @@
   #play-pause-button {
     height: 300%;
   }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+  }
 }
-
 
 body {
     font-family: sans-serif;
-    color: #333333;
-    /* background: linear-gradient(to bottom, green, white, red); */
-    /* background-color: linear-gradient(to bottom, green, white, red); */
-    /* background-color: rgb(232, 232, 232); */
+    color: black;
+    /* display: flex; */
+    /* align-items: flex-end; */
     
 }
 
@@ -28,8 +30,9 @@ body {
     flex-direction: row;
     justify-content: space-between; 
     border-radius: 25px;
-    box-shadow: 0 0 2px black;
+    box-shadow: 0px 23px 50px black;
     border: 3px solid black;
+    /* top: -20px; */
     
   }
   
@@ -53,20 +56,18 @@ body {
   
 
   main {
-    max-width: 800px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 20px;
+    
   }
   
   ul {
-    list-style: none;
+    /* list-style: none; */
     margin: 0;
     padding: 0px;
   }
   
-  li {
-    margin: 10px 0;
-  }
 
 
   #play-pause-button {
@@ -74,26 +75,39 @@ body {
     width: 100%;
     height: 170px;
     padding: 10px;
-    background-color: #242424;
+    background-color: #6c2c2c;
     bottom: -20px;
     left: 0;
     right: 0;
     position: fixed;
-    border-top-left-radius : 25px;
-    border-top-right-radius : 25px;
-    box-shadow: 0 -15px 50px black;
-    border: 3px solid black;
+    border-top-left-radius : 35px;
+    border-top-right-radius : 35px;
+    box-shadow: 0 -15px 40px black;
+    box-shadow: 0 -25px 50px black;
+    border: 5px solid black;
 
-    font-size: 260%;
+    font-size: 500%;
     font-weight: bold;
-    color: #ffffff;
+    color: #000000;
 
   }
   
-  #play-pause-button:hover {
-    background-color: #282828;
+  /* #play-pause-button:hover {
+    background-color: #d0d0d0;
+  } */
+
+  #play-pause-button img {
+    vertical-align: middle;
+    padding-right: 10px;
+    width: 100px; 
+    height: 100px;
   }
 
+  #play-pause-button img, #play-pause-button span {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
   
   footer {
     background-color: #eeeeee;
@@ -105,22 +119,29 @@ body {
     margin: 0;
   }
 
-  /* div {
-    box-shadow: 0 0 13px rgb(222, 11, 11);
-    border: 2px solid black; debugging prob
-  } */
+  /* create 2 columns, each taking up 1 fraction of the available space */
+  @media (min-width: 1200px) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  
+  
 
 
   .radio-item {
     display: flex;
     align-items: center;
     background-color: white;
-    box-shadow: 0 0 3px black;
-    border: 2px solid black;
+    box-shadow: 0 0 10px black;
+    border: 1px solid black;
     border-radius: 15px;
     height: 140px;
     cursor: pointer;
     position: relative; 
+    margin: 15px; 
   }
   
   .radio-item:hover {
@@ -137,7 +158,7 @@ body {
     width: 140px;
     height: 140px;
     border-radius: 15px;
-    box-shadow: 0 0 20px black, 0 0 20px black;
+    box-shadow: 0 0 20px black;
     position: absolute; 
     /* position: relative;  */
     left: 0; /* added */
