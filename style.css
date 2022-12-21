@@ -2,9 +2,9 @@
   h1, h2 {
     font-size: 40%;  /* reduce font size by 20% */
   }
-  #play-pause-button {
+  /* #play-pause-button {
     height: 300%;
-  }
+  } */
   ul {
     display: grid;
     grid-template-columns: repeat(1, 1fr); 
