@@ -173,7 +173,7 @@ body {
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(https://example.com/speaker-icon.png);
+    /* background-image: url(https://example.com/speaker-icon.png); */
     background-size: cover;
   }
 

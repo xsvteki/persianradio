@@ -63,68 +63,60 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
 
 
     radioItem.addEventListener('click', function(event) {
-      // remove "playing" class from all radio items
-      if (audioPlayer.src != station.url) {
+      try {
         // remove "playing" class from all radio items
-        Array.from(radioList.children).forEach((child) => {
-          child.classList.remove('playing');
-        });
-        // add "playing" class to the clicked radio item
-        radioItem.classList.add('playing');
-        audioPlayer.src = station.url;
-      }
+        if (audioPlayer.src != station.url) {
+          // remove "playing" class from all radio items
+          Array.from(radioList.children).forEach((child) => {
+            child.classList.remove('playing');
+          });
+          // add "playing" class to the clicked radio item
+          radioItem.classList.add('playing');
+          audioPlayer.src = station.url
+        }
+       
 
     
-    // check if the audio player is currently paused
-      if (audioPlayer.paused) {
-        // Show the loading indicator
-        radioImg.src = "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
+        // check if the audio player is currently paused
+        if (audioPlayer.paused) {
+          // Show the loading indicator
+          radioImg.src = "https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif";
+          
         
-        // Start playing the radio station
-        audioPlayer.play();
+            // Start playing the radio station
+            audioPlayer.play();
 
-        // Hide the loading indicator
-        audioPlayer.onplaying = function() {
           // Hide the loading indicator
-          radioImg.src = station.imageUrl;
-        };
+          audioPlayer.onplaying = function() {
+            // Hide the loading indicator
+            radioImg.src = station.imageUrl;
+            document.getElementById('play-pause-button').innerText = 'Pause';
+          };
 
-        radioItem.classList.add('playing');
-        // update the play/pause button's text
-        document.getElementById('play-pause-button').innerText = 'Pause';
+          radioItem.classList.add('playing');
+          // update the play/pause button's text
+        
 
-      } else {
-        // pause the audio
-        audioPlayer.pause();
-        //remove playing classlist
-        radioItem.classList.remove('playing');
-        // update the play/pause button's text
-        document.getElementById('play-pause-button').innerText = 'Play';   
+        } else {
+          // pause the audio
+          audioPlayer.pause();
+          //remove playing classlist
+          radioItem.classList.remove('playing');
+          // update the play/pause button's text
+          document.getElementById('play-pause-button').innerText = 'Play';   
+        }
+
       }
+      catch (error) {
+        console.log("Caught the Exception: Failed to load because no supported source was found.");
+      } 
+
     });
 
   });
 
 });
 
-// function playRadioStation() {
-//   // Start playing the radio station
-//   audioPlayer.src = url;
-
-// }
-function playRadioStation(url) {
-  // Start playing the radio station
-  // set audio player to curr station
-  // if (audioPlayer.src != station.url) {
-  //   audioPlayer.src = station.url;
-  // }
-  audioPlayer.play();
-
-  // Hide the spinner GIF
-  document.getElementById('spinner').style.display = 'none';
-  // Show the radio cover
-  document.getElementById('radio-cover').style.display = 'block';
-}
 
 
   
@@ -148,42 +140,3 @@ document.getElementById('play-pause-button').addEventListener('click', () => {
     // pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
   }
 });
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   const pauseIconContainer = document.createElement('div');
-// pauseIconContainer.id = 'pause-icon-container';
-
-// // set the initial background image for the pause icon container
-// pauseIconContainer.style.backgroundImage = "url('https://p.kindpng.com/picc/s/115-1156083_play-player-ui-round-comments-botao-de-video.png')";
-
-
-
-
-// window.addEventListener('scroll', () => {
-//   // update the bottom position of the container based on the current scroll position
-//   pauseIconContainer.style.bottom = `${window.scrollY}px`;
-// });
-
