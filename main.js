@@ -78,6 +78,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
         // radioItem.querySelector('.radio-cover').classList.remove('playing');
 
         if (audioPlayer.src != station.url) {
+          console.log(audioPlayer.src);
+          console.log(station.url);
           // remove "playing" class from all radio items
           Array.from(radioList.children).forEach((child) => {
             child.classList.remove('playing');
