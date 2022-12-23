@@ -26,7 +26,7 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     background: linear-gradient(140deg, green, green, white, red, red);
-    display: flex;
+    display: block;
     flex-direction: row;
     justify-content: space-between; 
     border-radius: 25px;
@@ -187,8 +187,10 @@ body {
   .english-name {
     font-size: 210%;
     font-weight: bold;
-    margin: 15px;
-    padding: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
     /* box-shadow: 0 0 3px black; */
     align-self: flex-start;
   }
@@ -201,7 +203,7 @@ body {
     margin: 10px;
     /* margin-left: 100px; */
     margin-left: auto;
-    box-shadow: 0 0 3px black;
+    /* box-shadow: 0 0 3px black; */
     align-self: flex-end;
   }
   
