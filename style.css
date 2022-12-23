@@ -128,7 +128,7 @@ body {
 
   .radio-item {
     display: flex;
-    align-items: center;
+    /* align-items: flex-end; */
     background-color: white;
     box-shadow: 0 0 10px black;
     border: 1px solid black;
@@ -136,7 +136,8 @@ body {
     height: 140px;
     cursor: pointer;
     position: relative; 
-    margin: 15px; 
+    /* margin-bottom: 25px;  */
+    margin: 10px; 
   }
   
   .radio-item:hover {
@@ -178,6 +179,9 @@ body {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.png');
     background-size: cover;
     background-position: center;
+
+    justify-content: space-between;
+    direction: rtl; /* for the foreign language text */
   }
   
   .english-name {
@@ -190,11 +194,14 @@ body {
   }
   
   .farsi-name {
+    /* width: 400px; */
+    /* height: 60px !important; */
     font-size: 230%;
     font-weight: bold;
     margin: 10px;
-    margin-left: 100px;
-    /* box-shadow: 0 0 3px black; */
+    /* margin-left: 100px; */
+    margin-left: auto;
+    box-shadow: 0 0 3px black;
     align-self: flex-end;
   }
   
