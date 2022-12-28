@@ -1,18 +1,21 @@
-@media (min-width: 350px) {
+@media (max-width: 1750px) {
+
   /* h1, h2 {
     font-size: 80%; 
   } */
 
-  /* .radio-item {
-    margin-top: 20px; 
-  } */
+  .radio-item {
+    margin-top: 120px; 
+  }
   /* #play-pause-button {
     height: 300%;
   } */
-  /* ul {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); 
-  } */
+
+  /* ul { */
+    /* display: grid; */
+    /* grid-template-columns: repeat(1, 1fr);  */
+  /* } */
+
 }
 
 body {
@@ -24,12 +27,12 @@ body {
 }
 
   /* create 2 columns, each taking up 1 fraction of the available space */
-/* @media (min-width: 1450px) {
+@media (min-width: 1850px) {
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
   }
-} */
+}
 
 
   
@@ -153,9 +156,15 @@ body {
     /* margin-bottom: 25px;  */
     margin: 10px;
     /* margin-right: 10px;  */
-    margin-top: 20px; 
+    margin-top: 30px; 
     /* margin-left: 10px;  */
   }
+
+@media (max-width: 1350px) {
+  .radio-item { 
+    margin-top: 5%; 
+  }
+}
   
   .radio-item:hover {
     background-color: #ececec;
@@ -216,8 +225,8 @@ body {
   .farsi-name {
     /* width: 400px; */
     /* height: 60px !important; */
-    /* font-size: 120%; */
-    font-size: min(7vw, 62px);
+    /* font-size: 220%; */
+    font-size: min(8vw, 72px);
 
     font-weight: bold;
     /* padding-top: 15px; */
