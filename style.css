@@ -76,6 +76,7 @@ body {
     /* list-style: none; */
     margin: 0;
     padding: 0px;
+    
     /* display: flex; */
 
   }
@@ -146,7 +147,10 @@ body {
     /* align-items: center;
     align-self: centers; */
     /* margin-bottom: 25px;  */
-    margin: 10px; 
+    margin: 10px;
+    /* margin-right: 10px; 
+    margin-top: 10px; 
+    margin-left: 10px;  */
   }
   
   .radio-item:hover {
