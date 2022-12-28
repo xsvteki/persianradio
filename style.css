@@ -203,7 +203,7 @@ body {
   
   .english-name {
     /* font-size: 260%; */
-    font-size: min(5vw, 56px);
+    font-size: min(5vw, 40px);
     font-weight: bold;
     margin-left: 5px;
     padding-left: 10px;
@@ -216,8 +216,8 @@ body {
   .farsi-name {
     /* width: 400px; */
     /* height: 60px !important; */
-    /* font-size: 280%; */
-    font-size: min(6vw, 56px);
+    /* font-size: 120%; */
+    font-size: min(7vw, 62px);
 
     font-weight: bold;
     /* padding-top: 15px; */
