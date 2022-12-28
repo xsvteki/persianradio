@@ -176,9 +176,9 @@ navigator.mediaSession.metadata = new MediaMetadata({
   title: 'Persian Radio',
   artist: '',
   artwork: [
-    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '512x512', type: 'image/png' },
-    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '1024x1024', type: 'image/png' },
-    { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '2048x2048', type: 'image/png' }
+    // { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '512x512', type: 'image/png' },
+    // { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '1024x1024', type: 'image/png' },
+    // { src: 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png', sizes: '2048x2048', type: 'image/png' }
   ]
 });
 
@@ -204,7 +204,7 @@ const audioPlayer = document.getElementById('audio-player')
 
 let currplaying = null;
 
-audioPlayer.poster = 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png';
+// audioPlayer.poster = 'https://cdn.countryflags.com/thumbs/iran/flag-square-250.png';
 document.body.appendChild(audioPlayer);
 
 document.getElementById('play-pause-button').addEventListener('click', () => {
