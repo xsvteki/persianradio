@@ -26,13 +26,7 @@ body {
     
 }
 
-  /* create 2 columns, each taking up 1 fraction of the available space */
-@media (min-width: 1850px) {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
+
 
 
   
@@ -42,15 +36,16 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     background: linear-gradient(170deg, green, green, green, white, red, red, red);
-    display: flex ;
+    display: flex;
     flex-direction: row;
     justify-content: space-between; 
     border-radius: 25px;
     box-shadow: 0px 23px 50px black;
     border: 3px solid black;
     /* text-align: right; */
-    /* align-items: right; */
+    /* align-items: center; */
     /* top: 20px; */
+    /* right: 0; */
 
     
   }
@@ -172,7 +167,7 @@ body {
 
 @media (max-width: 1150px) {
   .radio-item { 
-    margin-top: 5%; 
+    margin-top: 3%; 
   }
 
   .radio-item {
@@ -236,7 +231,7 @@ body {
   
   .english-name {
     /* font-size: 260%; */
-    font-size: min(5.5vw, 40px);
+    font-size: min(5vw, 40px);
     font-weight: bold;
     margin-left: 5px;
     padding-left: 10px;
@@ -250,7 +245,7 @@ body {
     /* width: 400px; */
     /* height: 60px !important; */
     /* font-size: 220%; */
-    font-size: min(7.5vw, 66px);
+    font-size: min(7vw, 66px);
 
     font-weight: bold;
     /* padding-top: 15px; */
@@ -281,3 +276,17 @@ body {
     
   } */
     
+
+    /* create 2 columns, each taking up 1 fraction of the available space */
+@media (min-width: 1150px) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .farsi-name {
+    font-size: 260%;
+  }
+  .english-name {
+    font-size: 260%;
+  }
+}
