@@ -61,7 +61,7 @@ body {
   }
   
   h2 {
-    margin-top: 45px;
+    margin-top: 30px;
     /* font-size: 2em; */
     font-weight: bold;
     color: black;
@@ -71,7 +71,7 @@ body {
 
   h1, h2 {
     /* margin-top: 50px; */
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: min(6.2vw, 82px);
   }
   
@@ -161,15 +161,11 @@ body {
     /* margin-bottom: 25px;  */
     margin: 10px;
     /* margin-right: 10px;  */
-    margin-top: 30px; 
+    margin-top: 15px; 
     /* margin-left: 10px;  */
   }
 
-@media (max-width: 1150px) {
-  .radio-item { 
-    margin-top: 40px; 
-  }
-}
+
   
   .radio-item:hover {
     background-color: #ececec;
@@ -201,7 +197,7 @@ body {
   
   .radio-photo-div {
     /* width: 30%; */
-    width: 120px !important;
+    width: 120px;
     height: 120px;
     /* background-color: #dadada; */
     /* box-shadow: 0 0 20px rgb(106, 23, 23); */
@@ -264,22 +260,39 @@ body {
     
 
     /* create 2 columns, each taking up 1 fraction of the available space */
-@media (min-width: 1150px) {
+   /* 1150 */
+    @media (min-width: 1050px) {
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
   }
   
   .english-name {
+    /* font-size: min(2vw, 40px); */
     font-size: min(2vw, 40px);
   }
 
   .farsi-name {
+    /* font-size: min(3.1vw, 65px); */
     font-size: min(3.1vw, 65px);
     /* margin-bottom: 20px; */
   }
 
   .radio-item {
-    min-width: 515px;
+    min-width: 455px;
   }
+}
+/* smaller devices  */
+@media (max-width: 1050px) {
+  .radio-item { 
+    margin-top: 25px; 
+  }
+
+  .radio-photo-div, .radio-cover, .radio-item {
+    height: 140px;
+  }
+  .radio-photo-div, .radio-cover {
+    width: 140px;
+  }
+
 }
