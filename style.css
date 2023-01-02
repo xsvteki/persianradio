@@ -32,7 +32,7 @@ body {
   
   
   header {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     padding-left: 30px;
     padding-right: 30px;
     background: linear-gradient(170deg, green, green, green, white, red, red, red);
@@ -40,7 +40,7 @@ body {
     flex-direction: row;
     justify-content: space-between; 
     border-radius: 25px;
-    box-shadow: 0px 23px 50px black;
+    box-shadow: 0px 13px 30px black;
     border: 3px solid black;
     /* text-align: right; */
     /* align-items: center; */
@@ -98,18 +98,18 @@ body {
   #play-pause-button {
     display: block;
     width: 100%;
-    height: 170px;
+    /* height: 140px; */
     padding: 10px;
     background-color: #ededed;
     bottom: -20px;
     left: 0;
     right: 0;
     position: fixed;
-    border-top-left-radius : 35px;
-    border-top-right-radius : 35px;
-    box-shadow: 0 -15px 40px black;
-    box-shadow: 0 -25px 50px black;
-    border: 5px solid black;
+    /* border-top-left-radius : 35px; */
+    /* border-top-right-radius : 35px; */
+    /* box-shadow : 0 -5px 10px black; */
+    /* box-shadow: 0 -25px 50px black; */
+    border-top: 2px solid black;
 
     font-size: 500%;
     font-weight: bold;
@@ -121,6 +121,7 @@ body {
     padding-right: 10px;
     width: 100px; 
     height: 100px;
+    padding-bottom: 30px;
   }
 
   #play-pause-button img, #play-pause-button span {
@@ -293,6 +294,45 @@ body {
   }
   .radio-photo-div, .radio-cover {
     width: 140px;
+  }
+
+}
+
+
+
+
+/* dark mode support */
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #282828;
+  }
+
+  .radio-item {
+    background-color: #e8e8e8;
+  }
+
+  .radio-item:hover {
+    background-color: #b8b8b8;
+    
+  }
+  
+  .radio-item.playing {
+    background-color: #a9a9a9; 
+    /* box-shadow: 0 0 20px black; */
+  }
+
+  #play-pause-button {
+    /* border-color: white; */
+    /* box-shadow : 0 5px 20px rgba(255, 255, 255, 0); */
+    background-color: #e8e8e8;
+
   }
 
 }

@@ -130,7 +130,9 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
             // Hide the loading indicator
             radioImg.src = station.imageUrl;
             
-            button.innerHTML = "Pause <img src='pause.png'>";
+            
+            // button.innerHTML = "Pause <img src='pause.png'>";
+            button.innerHTML = "<img src='pause.png'>";
             // document.title = "Persian Radio: " + station.name;
             // faviconLink.href = station.imageUrl;
             // document.querySelector("link[rel~='favicon']").href = station.imageUrl;
@@ -149,7 +151,8 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations
           radioItem.classList.remove('playing');
 
           // update the play/pause button's text
-          button.innerHTML = "Play <img src='play.png'>";
+          // button.innerHTML = "Play <img src='play.png'>";
+          button.innerHTML = "<img src='play.png'>";
 
           radioImg.src = station.imageUrl;
         }
@@ -189,12 +192,16 @@ navigator.mediaSession.metadata = new MediaMetadata({
 navigator.mediaSession.setActionHandler('play', function() {
   audioPlayer.play();
   // update the pages button's text
-  button.innerHTML = "Pause <img src='pause.png'>";
+  // button.innerHTML = "Pause <img src='pause.png'>";
+  button.innerHTML = "<img src='pause.png'>";
+  // document.getElementById('.radio-photo-div');
+
 });
 navigator.mediaSession.setActionHandler('pause', function() {
   audioPlayer.pause();
   // update the pages button's text
-  button.innerHTML = "Play <img src='play.png'>";
+  // button.innerHTML = "Play <img src='play.png'>";
+  button.innerHTML = "<img src='play.png'>";
 });
 
 
@@ -213,7 +220,8 @@ document.getElementById('play-pause-button').addEventListener('click', () => {
 
     audioPlayer.play();
     // update the button's text
-    button.innerHTML = "Pause <img src='pause.png'>";
+    // button.innerHTML = "Pause <img src='pause.png'>";
+    button.innerHTML = "<img src='pause.png'>";
 
     // addPlayingClass(currplaying);
       
@@ -223,6 +231,7 @@ document.getElementById('play-pause-button').addEventListener('click', () => {
     
     // currplaying = removePlayingClass;
     // update the button's text
-    button.innerHTML = "Play <img src='play.png'>";
+    // button.innerHTML = "Play <img src='play.png'>";
+    button.innerHTML = "<img src='play.png'>";
   }
 });
