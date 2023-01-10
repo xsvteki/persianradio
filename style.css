@@ -148,7 +148,7 @@ body {
   .radio-item {
     display: flex;
     /* width: 140px; */
-    min-width: 715px;
+    min-width: 650px;
     /* align-items: flex-end; */
     background-color: white;
     box-shadow: 0 0 10px black;
@@ -352,12 +352,12 @@ body {
   }
 
   .farsi-name {
-    font-size: min(3vw, 58px);
-    margin-bottom: 5px;
+    font-size: min(3.3vw, 58px);
+    margin-bottom: 3px;
   }
 
   .radio-item {
-    min-width: 455px;
+    min-width: 350px;
   }
   .radio-item { 
     margin-top: 10px;
@@ -366,10 +366,10 @@ body {
     margin-left: 0px;
   }
   .radio-photo-div, .radio-cover, .radio-item {
-    height: min(9vw, 82px)
+    height: min(7vw, 120px)
   }
   .radio-photo-div, .radio-cover {
-    width: min(9vw, 82px)
+    width: min(7vw, 120px)
   }
   #play-pause-button img {
     width: 70px; 
