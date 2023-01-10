@@ -262,7 +262,7 @@ body {
 
     /* create 2 columns, each taking up 1 fraction of the available space */
    /* 1150 */
-    @media (min-width: 1050px) {
+@media (min-width: 1050px) {
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -283,6 +283,7 @@ body {
     min-width: 455px;
   }
 }
+
 /* smaller devices  */
 @media (max-width: 1050px) {
   .radio-item { 
@@ -336,3 +337,39 @@ body {
   }
 
 }
+
+
+
+@media only screen and (orientation: landscape) {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .english-name {
+    font-size: min(2vw, 34px);
+  }
+
+  .farsi-name {
+    font-size: min(3vw, 58px);
+    margin-bottom: 20px;
+  }
+
+  .radio-item {
+    min-width: 455px;
+  }
+
+  .radio-item { 
+    margin-top: 15px; 
+    margin-left: 0;
+  }
+
+  .radio-photo-div, .radio-cover, .radio-item {
+    height: 100px;
+  }
+  .radio-photo-div, .radio-cover {
+    width: 100px;
+  }
+}
+
+
