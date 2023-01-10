@@ -111,7 +111,7 @@ body {
     /* box-shadow: 0 -25px 50px black; */
     border-top: 2px solid black;
 
-    font-size: 500%;
+    /* font-size: 500%; */
     font-weight: bold;
     color: #000000;
 
@@ -262,21 +262,19 @@ body {
 
     /* create 2 columns, each taking up 1 fraction of the available space */
    /* 1150 */
-@media (min-width: 1050px) {
+/* @media (min-width: 1050px) {
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
   }
   
   .english-name {
-    /* font-size: min(2vw, 40px); */
+
     font-size: min(2vw, 40px);
   }
 
   .farsi-name {
-    /* font-size: min(3.1vw, 65px); */
     font-size: min(3.1vw, 65px);
-    /* margin-bottom: 20px; */
   }
 
   .radio-item {
@@ -284,7 +282,6 @@ body {
   }
 }
 
-/* smaller devices  */
 @media (max-width: 1050px) {
   .radio-item { 
     margin-top: 25px; 
@@ -297,7 +294,7 @@ body {
     width: 140px;
   }
 
-}
+} */
 
 
 
@@ -341,6 +338,13 @@ body {
 
 
 @media only screen and (orientation: landscape) {
+
+  h1, h2 {
+    margin-top: 0;
+    font-size: min(4.2vw, 82px);
+    
+  }
+
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -348,11 +352,12 @@ body {
   
   .english-name {
     font-size: min(2vw, 34px);
+    margin-top: 0px;
   }
 
   .farsi-name {
     font-size: min(3vw, 58px);
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   .radio-item {
@@ -360,16 +365,26 @@ body {
   }
 
   .radio-item { 
-    margin-top: 15px; 
+    margin-top: 5px;
+    /* margin-bottom: 0; */
     margin-left: 0;
   }
 
   .radio-photo-div, .radio-cover, .radio-item {
-    height: 100px;
+    height: min(9vw, 82px)
   }
+
   .radio-photo-div, .radio-cover {
-    width: 100px;
+    width: min(9vw, 82px)
   }
+
+  #play-pause-button img {
+    width: 70px; 
+    height: 70px;
+  } 
+
 }
+
+
 
 
