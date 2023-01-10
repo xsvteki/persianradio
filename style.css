@@ -154,15 +154,15 @@ body {
     box-shadow: 0 0 10px black;
     border: 2px solid black;
     border-radius: 15px;
-    height: 120px;
+    height: 140px;
     cursor: pointer;
     position: relative; 
     /* align-items: center;
     align-self: centers; */
     /* margin-bottom: 25px;  */
-    margin: 10px;
+    margin: 5px;
     /* margin-right: 10px;  */
-    margin-top: 15px; 
+    margin-top: 20px; 
     /* margin-left: 10px;  */
   }
 
@@ -179,8 +179,8 @@ body {
   }
   
   .radio-cover {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 15px;
     box-shadow: 0 0 10px black;
     border-width: 1px;
@@ -281,17 +281,17 @@ body {
     min-width: 455px;
   }
 }
-
-@media (max-width: 1050px) {
+*/
+/* @media (max-width: 1050px) {
   .radio-item { 
-    margin-top: 25px; 
+    margin-top: 20px; 
   }
 
   .radio-photo-div, .radio-cover, .radio-item {
-    height: 140px;
+    height: 150px;
   }
   .radio-photo-div, .radio-cover {
-    width: 140px;
+    width: 150px;
   }
 
 } */
@@ -338,18 +338,14 @@ body {
 
 
 @media only screen and (orientation: landscape) {
-
   h1, h2 {
     margin-top: 0;
     font-size: min(4.2vw, 82px);
-    
   }
-
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
   }
-  
   .english-name {
     font-size: min(2vw, 34px);
     margin-top: 0px;
@@ -363,26 +359,22 @@ body {
   .radio-item {
     min-width: 455px;
   }
-
   .radio-item { 
-    margin-top: 5px;
+    margin-top: 10px;
     /* margin-bottom: 0; */
-    margin-left: 0;
+    margin-right: 15px;
+    margin-left: 0px;
   }
-
   .radio-photo-div, .radio-cover, .radio-item {
     height: min(9vw, 82px)
   }
-
   .radio-photo-div, .radio-cover {
     width: min(9vw, 82px)
   }
-
   #play-pause-button img {
     width: 70px; 
     height: 70px;
   } 
-
 }
 
 
