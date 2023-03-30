@@ -94,4 +94,13 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/tv.csv')
 const searchButton = document.querySelector('#search-button');
 searchButton.addEventListener('click', handleSearch);
 
+const searchInput = document.querySelector('#search-input');
+searchInput.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter' || event.keyCode === 13) {
+    event.preventDefault();
+    handleSearch();
+  }
+});
+
+
   

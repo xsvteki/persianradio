@@ -11,6 +11,37 @@ body {
   padding: 20px;
 }
 
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+#search-input {
+  width: 200px;
+  height: 20px;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+#search-button {
+  /* background-color: #007bff; */
+  /* color: #fff; */
+  border: none;
+  padding: 10px;
+  /* height: 20px; */
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100px;
+  height: 33px;
+}
+
+#search-button:hover {
+  background-color: #0069d9;
+}
+
+
+
 .station.hidden {
   display: none;
 }
@@ -78,5 +109,23 @@ h1 {
 
   .farsi-name {
     font-size: min(10vw, 66px);
+  }
+}
+
+.tv-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+}
+
+
+@media only screen and (orientation: landscape) {
+  .tv-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-column-gap: 40px;
+    padding: 30px;
+  }
+  #search-input {
+    width: 400px;
   }
 }
