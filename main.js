@@ -6,7 +6,7 @@ need to make sure that the HTML and JavaScript files are served from the same or
 const radioStations = [];
 
 // Fetch the CSV file and parse it
-fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/tations.csv')
+fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/stations.csv')
 .then(response => response.text())
 .then(data => {
   // Parse the CSV data
