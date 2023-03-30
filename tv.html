@@ -13,8 +13,17 @@
 
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>TV Stations</h1>
+    <h2>ایستگاه های تلویزیونی</h2>
+  </header>
+  <div class="container">
+
+    <div class="settings-container">
+      <!-- <label for="columns-slider">Columns:</label> -->
+      <input type="range" id="columns-slider" min="1" max="4" value="2">
+    </div>    
+
     <div class="search-container">
       <input type="text" id="search-input" placeholder="Search...">
       <button id="search-button">Search</button>

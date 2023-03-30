@@ -1,3 +1,16 @@
+header {
+  /* background-color: #eeeeee; */
+  padding-left: 10px;
+  padding-right: 10px;
+  background: linear-gradient(150deg, green, green, green, white, red, red, red);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  border-radius: 25px;
+  box-shadow: 0px 13px 30px black;
+  border: 3px solid black;
+}
+
 body {
   font-family: sans-serif;
   /* color: rgb(255, 255, 255); */
@@ -6,41 +19,52 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  /* max-width: 1900px; */
   margin: 0 auto;
-  padding: 20px;
+  padding: 5px;
 }
+
+.settings-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
 
 .search-container {
   text-align: center;
-  margin-top: 20px;
-  font-size: 1.5rem;
+  margin-top: 10px;
+  font-size: 1rem;
 }
 
 #search-input {
   width: 200px;
   height: 20px;
-  font-size: 1.5rem;
-  padding: 5px;
+  font-size: 1rem;
+  /* padding: 5px; */
 }
 
 #search-button {
   /* background-color: #007bff; */
-  /* color: #fff; */
+  color: #000000;
   border: none;
-  padding: 10px;
+  /* padding: 10px; */
   /* height: 20px; */
   font-size: 1rem;
   cursor: pointer;
-  width: 100px;
-  height: 33px;
+  /* width: 70px; */
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
 }
 
 #search-button:hover {
   background-color: #0069d9;
 }
-
-
 
 .station.hidden {
   display: none;
@@ -48,9 +72,17 @@ body {
 
 
 h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ffffff;
+  font-size: 5vw;
+  margin: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+h2 {
+  font-size: 5vw;
+  margin: 5px;
+  font-weight: bold;
+  color: black;
 }
 
 .tv-list {
@@ -58,17 +90,17 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .station {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 650px;
-  height: 140px;
-  margin: 5px;
+  /* min-width: 650px; */
+  /* height: 140px; */
+  margin: 3px;
   margin-top: 20px;
   background-color: white;
   border: 2px solid black;
@@ -79,53 +111,44 @@ h1 {
 }
 
 .english-name {
-  font-size: min(5vw, 40px);
+  font-size: min(4vw, 40px);
   font-weight: bold;
-  margin-left: 5px;
-  padding-left: 10px;
-  margin-top: 10px;
-  padding-top: 10px;
   align-self: flex-start;
+  padding-left: 5px;
+  
 }
 
 .farsi-name {
-  font-size: min(6.5vw, 66px);
+  font-size: min(4vw, 66px);
   font-weight: bold;
-  margin-bottom: 10px;
   margin-left: auto;
   align-self: flex-end;
-  padding-right: 15px;
-}
-
-@media only screen and (max-width: 768px) {
-  .station {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .english-name {
-    font-size: min(7vw, 40px);
-  }
-
-  .farsi-name {
-    font-size: min(10vw, 66px);
-  }
+  padding-right: 5px;
 }
 
 .tv-list {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); 
+  grid-template-columns: repeat(var(--columns, 2), 1fr); /* use CSS variables to set the number of columns */
 }
 
 
 @media only screen and (orientation: landscape) {
-  .tv-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-column-gap: 40px;
-    padding: 30px;
+
+  .station {
+    margin: 15px;
+    margin-top: 35px;
   }
+
   #search-input {
     width: 400px;
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 2.5vw;
+  }
+  
+  h2 {
+    font-size: 2.5vw;
   }
 }
