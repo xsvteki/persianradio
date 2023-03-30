@@ -34,6 +34,15 @@ body {
 }
 
 
+#home-button {
+  color: #000000;
+  border: none;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 
 .search-container {
   text-align: center;
@@ -52,14 +61,16 @@ body {
   /* background-color: #007bff; */
   color: #000000;
   border: none;
+  border-radius: 5px;
   /* padding: 10px; */
   /* height: 20px; */
   font-size: 1rem;
   cursor: pointer;
   /* width: 70px; */
-  height: 25px;
+  height: 30px;
   text-align: center;
   line-height: 25px;
+  margin-left: 5px;
 }
 
 #search-button:hover {
