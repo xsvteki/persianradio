@@ -67,14 +67,6 @@ fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/tv.csv')
       farsiTitle.innerHTML = station.farsi_name;
       overlay.appendChild(farsiTitle);
 
-      const iframe = document.createElement('iframe');
-      iframe.src = 'http://www.parsatv.com/embed.php?name=AFN-Music&auto=false';
-      iframe.setAttribute('width', '395');
-      iframe.setAttribute('height', '222');
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allowfullscreen', '');
-      document.body.appendChild(iframe);
-
 // Request fullscreen when the user clicks on the iframe
       iframe.addEventListener('click', () => {
         if (iframe.requestFullscreen) {
