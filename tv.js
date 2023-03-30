@@ -1,7 +1,7 @@
 const tvStations = [];
 
 // Fetch the CSV file and parse it
-fetch('tv.csv')
+fetch('https://raw.githubusercontent.com/ebootehsaz/persianradio/master/tv.csv')
 .then(response => response.text())
 .then(data => {
   // Parse the CSV data
@@ -18,70 +18,75 @@ fetch('tv.csv')
     });
   });
 
-  // Get the TV stations list element
-  const tvList = document.getElementById('tv-stations-list');
+  // Display stations in list
+  const tvList = document.querySelector('.tv-list');
 
-  // Create a list item for each TV station
-  tvStations.forEach((station) => {
-    // Create a div for the TV station
-    const tvStationDiv = document.createElement('div');
-    tvStationDiv.classList.add('tv-station');
+  // Determine number of columns based on screen size
+  let numColumns = 6; // desktop
+  if (window.innerWidth < 768) {
+    numColumns = 3; // mobile
+  }
 
-    // Create an image for the TV station
-    const tvStationImg = document.createElement('img');
-    tvStationImg.src = 'placeholder.jpg';
-    tvStationImg.alt = station.farsi_name;
+  // Calculate number of stations per column
+  const numStations = tvStations.length;
+  const stationsPerColumn = Math.ceil(numStations / numColumns);
 
-    // Create a div for the TV station names
-    const tvStationNamesDiv = document.createElement('div');
-    tvStationNamesDiv.classList.add('tv-station-names');
+  // Create station boxes
+  for (let i = 0; i < numColumns; i++) {
+    const column = document.createElement('div');
+    column.classList.add('column');
+    tvList.appendChild(column);
 
-    // Create a heading for the TV station English name
-    const tvStationEnglishName = document.createElement('h3');
-    tvStationEnglishName.textContent = station.english_name;
+    for (let j = 0; j < stationsPerColumn; j++) {
+      const stationIndex = i * stationsPerColumn + j;
+      if (stationIndex >= numStations) {
+        break;
+      }
 
-    // Create a paragraph for the TV station Farsi name
-    const tvStationFarsiName = document.createElement('p');
-    tvStationFarsiName.classList.add('farsi-name');
-    tvStationFarsiName.textContent = station.farsi_name;
+      const station = tvStations[stationIndex];
+      const box = document.createElement('div');
+      box.classList.add('box');
+      column.appendChild(box);
 
-    // Append the English and Farsi names to the TV station names div
-    tvStationNamesDiv.appendChild(tvStationEnglishName);
-    tvStationNamesDiv.appendChild(tvStationFarsiName);
+      const link = document.createElement('a');
+      link.href = station.tv_link;
+      link.target = '_blank';
+      box.appendChild(link);
 
-    // Append the image and names div to the TV station div
-    tvStationDiv.appendChild(tvStationImg);
-    tvStationDiv.appendChild(tvStationNamesDiv);
+      const overlay = document.createElement('div');
+      overlay.classList.add('overlay');
+      link.appendChild(overlay);
 
-    // Add a click event listener to the TV station div
-    tvStationDiv.addEventListener('click', () => {
-      // Create an iframe for the TV station video
-      const tvStationVideoIframe = document.createElement('iframe');
-      tvStationVideoIframe.src = station.tv_link;
-      tvStationVideoIframe.allowfullscreen = true;
-      tvStationVideoIframe.autoplay = true;
+      const title = document.createElement('div');
+      title.classList.add('title');
+      title.innerHTML = station.english_name;
+      overlay.appendChild(title);
 
-      // Create a div for the TV station video player
-      const tvStationVideoPlayerDiv = document.createElement('div');
-      tvStationVideoPlayerDiv.classList.add('tv-station-video-player');
-      tvStationVideoPlayerDiv.appendChild(tvStationVideoIframe);
+      const farsiTitle = document.createElement('div');
+      farsiTitle.classList.add('farsi-title');
+      farsiTitle.innerHTML = station.farsi_name;
+      overlay.appendChild(farsiTitle);
 
-      // Create a div for the TV station video player container
-      const tvStationVideoPlayerContainerDiv = document.createElement('div');
-      tvStationVideoPlayerContainerDiv.classList.add('tv-station-video-player-container');
-      tvStationVideoPlayerContainerDiv.appendChild(tvStationVideoPlayerDiv);
+      const iframe = document.createElement('iframe');
+      iframe.src = 'http://www.parsatv.com/embed.php?name=AFN-Music&auto=false';
+      iframe.setAttribute('width', '395');
+      iframe.setAttribute('height', '222');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', '');
+      document.body.appendChild(iframe);
 
-      // Add the TV station video player container to the body
-      document.body.appendChild(tvStationVideoPlayerContainerDiv);
-
-      // Add a click event listener to the TV station video player container
-      tvStationVideoPlayerContainerDiv.addEventListener('click', () => {
-        // Remove the TV station video player container from the body
-        document.body.removeChild(tvStationVideoPlayerContainerDiv);
+// Request fullscreen when the user clicks on the iframe
+      iframe.addEventListener('click', () => {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
       });
-    });
-
-    // Append the TV station div to the TV stations list
-    tvList.appendChild(tvStationDiv);
-  });
+    
+      
+    }
+  }
 });
