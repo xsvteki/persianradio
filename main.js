@@ -236,15 +236,5 @@ document.getElementById('play-pause-button').addEventListener('click', () => {
   }
 });
 
-function checkOrientation() {
-  if (window.innerHeight < window.innerWidth) {
-    // Landscape mode
-    document.querySelector("ul").classList.add("landscape-mode");
-  } else {
-    // Portrait mode
-    document.querySelector("ul").classList.remove("landscape-mode");
-  }
-}
 
-window.addEventListener("orientationchange", checkOrientation);
 
