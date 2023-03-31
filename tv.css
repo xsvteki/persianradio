@@ -14,13 +14,10 @@ header {
 
 body {
   font-family: sans-serif;
-  /* color: rgb(255, 255, 255); */
-  /* background: linear-gradient(170deg, green, green, green, white, red, red, red);  */
   background: #282828;
 }
 
 .container {
-  /* max-width: 1900px; */
   margin: 0 auto;
   padding: 5px;
 }
@@ -91,20 +88,13 @@ body {
   display: none;
 }
 
-
-h1 {
+h1, h2 {
   font-size: 5vw;
   margin: 5px;
   font-weight: bold;
   color: black;
 }
 
-h2 {
-  font-size: 5vw;
-  margin: 5px;
-  font-weight: bold;
-  color: black;
-}
 
 .tv-list {
   display: flex;
@@ -158,12 +148,6 @@ h2 {
 }
 
 
-
-
-
-
-
-
 @media only screen and (orientation: landscape) {
 
   :root {
@@ -171,22 +155,19 @@ h2 {
     --font-size: calc(3.5em - var(--columns) * .4em);
   }
 
-  .station {
-    margin: 15px;
-    margin-top: 35px;
-  }
-
   #search-input {
     width: 400px;
     height: 30px;
   }
 
-  h1 {
+  h1, h2{
+    margin-top: 0;
     font-size: 2.5vw;
   }
-  
-  h2 {
-    font-size: 2.5vw;
+
+  .station {
+    margin: 15px;
+    margin-top: 35px;
   }
 
   .english-name {
