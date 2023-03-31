@@ -49,17 +49,15 @@ body {
 
     
   }
-  
-
-  .settings-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  #radios {
+    color: #000000;
+    border: none;
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 0;
   }
-  
   
   #home-button {
     color: #000000;
@@ -71,14 +69,24 @@ body {
     margin-right: 5px;
   }
   
+  .settings-container { /* column slider*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
   .search-container {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 1rem;
   }
   
   #search-input {
-    width: 200px;
+    width: 150px;
     height: 20px;
     font-size: 1rem;
     /* padding: 5px; */
@@ -89,20 +97,20 @@ body {
     color: #000000;
     border: none;
     border-radius: 5px;
-    /* padding: 10px; */
-    /* height: 20px; */
+    padding: 5px;
     font-size: 1rem;
     cursor: pointer;
     /* width: 70px; */
     height: 30px;
     text-align: center;
-    line-height: 25px;
     margin-left: 5px;
+    margin-right: 0;
   }
   
-  #search-button:hover {
-    background-color: #0069d9;
+  #search-button:hover, #home-button:hover, #radios:hover {
+    background-color: #408fe3;
   }
+  
   
   .station.hidden {
     display: none;
@@ -398,6 +406,11 @@ body {
 
 
 @media only screen and (orientation: landscape) {
+  #search-input {
+    width: 400px;
+    height: 30px;
+  }
+  
   h1, h2 {
     margin-top: 0;
     font-size: min(3.2vw, 62px);
