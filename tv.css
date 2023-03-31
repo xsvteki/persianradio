@@ -1,3 +1,4 @@
+
 header {
   /* background-color: #eeeeee; */
   padding-left: 10px;
@@ -24,15 +25,15 @@ body {
   padding: 5px;
 }
 
-.settings-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; /* Center items horizontally */
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+#radios {
+  color: #000000;
+  border: none;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 0;
 }
-
 
 #home-button {
   color: #000000;
@@ -44,14 +45,24 @@ body {
   margin-right: 5px;
 }
 
+.settings-container { /* column slider*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .search-container {
   text-align: center;
   margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 
 #search-input {
-  width: 200px;
+  width: 150px;
   height: 20px;
   font-size: 1rem;
   /* padding: 5px; */
@@ -62,19 +73,18 @@ body {
   color: #000000;
   border: none;
   border-radius: 5px;
-  /* padding: 10px; */
-  /* height: 20px; */
+  padding: 5px;
   font-size: 1rem;
   cursor: pointer;
   /* width: 70px; */
   height: 30px;
   text-align: center;
-  line-height: 25px;
   margin-left: 5px;
+  margin-right: 0;
 }
 
-#search-button:hover {
-  background-color: #0069d9;
+#search-button:hover, #home-button:hover, #radios:hover {
+  background-color: #408fe3;
 }
 
 .station.hidden {
@@ -111,8 +121,8 @@ h2 {
   justify-content: center;
   /* min-width: 650px; */
   /* height: 140px; */
-  margin: 3px;
-  margin-top: 20px;
+  margin: 5px;
+  margin-top: 10px;
   background-color: white;
   border: 2px solid black;
   border-radius: 15px;
@@ -121,16 +131,21 @@ h2 {
   position: relative;
 }
 
+:root {
+  --columns: 2;
+  --font-size: calc(1.8em - var(--columns) * .3em);
+}
+
+
 .english-name {
-  font-size: min(4vw, 40px);
+  font-size: var(--font-size);
   font-weight: bold;
   align-self: flex-start;
   padding-left: 5px;
-  
 }
 
 .farsi-name {
-  font-size: min(4vw, 66px);
+  font-size: calc(var(--font-size) + .1em);
   font-weight: bold;
   margin-left: auto;
   align-self: flex-end;
@@ -139,11 +154,22 @@ h2 {
 
 .tv-list {
   display: grid;
-  grid-template-columns: repeat(var(--columns, 2), 1fr); /* use CSS variables to set the number of columns */
+  grid-template-columns: repeat(var(--columns, 2), 1fr);
 }
 
 
+
+
+
+
+
+
 @media only screen and (orientation: landscape) {
+
+  :root {
+    --columns: 2;
+    --font-size: calc(3.5em - var(--columns) * .4em);
+  }
 
   .station {
     margin: 15px;
@@ -161,5 +187,13 @@ h2 {
   
   h2 {
     font-size: 2.5vw;
+  }
+
+  .english-name {
+    font-size: calc(var(--font-size));
+  }
+  
+  .farsi-name {
+    font-size: calc(var(--font-size));
   }
 }
